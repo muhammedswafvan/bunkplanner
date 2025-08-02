@@ -41,10 +41,11 @@ We solved this by creating **BunkPlanner**, a calculator that:
 ```bash
 git clone https://github.com/muhammedswafvan/bunkplanner.git
 cd bunkplanner
+
 Run Locally
 Just open index.html in a browser or use Live Server in VS Code.
 
-Project Documentation
+### Project Documentation
 Screenshots
 !(https://drive.google.com/file/d/1ao4YeW1CfFHeK8sXVw1k7dEqGyC7uVaC/view?usp=sharing)
 Home page with input fields and calculate button.
@@ -55,20 +56,20 @@ Result section showing attendance calculations and banters.
 (https://drive.google.com/file/d/1lvqgkHDpIn756OXRcYexexZbcDqFf5E-/view?usp=sharing)
 Dark mode enabled view of the BunkPlanner.
 
-Diagrams
+### Diagrams
 (https://drive.google.com/file/d/1NmE4VBw80HXVFzueMAWeRNTG-V1njlB0/view?usp=sharing)
 Workflow: User inputs → Calculator → Attendance stats → Malayalam banter.
 
-Project Demo
+### Project Demo
 Live Site
 https://bunkplanner.vercel.app
 Hosted live on Vercel – calculate and plan your bunks instantly.
 
-Video
+### Video
 (https://drive.google.com/file/d/19yVzMayM9Nruyr4fV3mwzFCqHpfqJvoU/view?usp=sharing)
 Shows a live demo of calculating attendance and planning bunks.
 
-Team Contributions
+### Team Contributions
 Muhammed Swafvan: Project idea, coding, UI design, deployment.
 
 Faizan Luthyanvi: Coding, UI enhancements, deployment support.
