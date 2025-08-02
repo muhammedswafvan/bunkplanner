@@ -37,39 +37,38 @@ We solved this by creating **BunkPlanner**, a calculator that:
 
 ## Implementation  
 
-### Installation  
-```bash
+⚙️ Implementation
+🔧 Installation
+Clone the repo:
 git clone https://github.com/muhammedswafvan/bunkplanner.git
 cd bunkplanner
 
-Run Locally
+▶️ Run Locally
 Just open index.html in a browser or use Live Server in VS Code.
 
-Project Documentation
-Screenshots
-!(https://drive.google.com/file/d/1ao4YeW1CfFHeK8sXVw1k7dEqGyC7uVaC/view?usp=sharing)
-Home page with input fields and calculate button.
+📄 Project Documentation
+📸 Screenshots
+Screenshot 1: Home page with input fields and calculate button.
+Link: https://drive.google.com/file/d/1ao4YeW1CfFHeK8sXVw1k7dEqGyC7uVaC/view
 
-(https://drive.google.com/file/d/1XhaY1u9qb-9bL0AIVCkfL_KDf0ZmO4ik/view?usp=sharing)
-Result section showing attendance calculations and banters.
+Screenshot 2: Result section showing attendance calculations and Malayalam banters.
+Link: https://drive.google.com/file/d/1XhaY1u9qb-9bL0AIVCkfL_KDf0ZmO4ik/view
 
-(https://drive.google.com/file/d/1lvqgkHDpIn756OXRcYexexZbcDqFf5E-/view?usp=sharing)
-Dark mode enabled view of the BunkPlanner.
+Screenshot 3: Dark mode enabled view of BunkPlanner.
+Link: https://drive.google.com/file/d/1lvqgkHDpIn756OXRcYexexZbcDqFf5E-/view
 
-Diagrams
-(https://drive.google.com/file/d/1NmE4VBw80HXVFzueMAWeRNTG-V1njlB0/view?usp=sharing)
-Workflow: User inputs → Calculator → Attendance stats → Malayalam banter.
+🧩 Diagrams
+Workflow Diagram: User inputs → Calculator → Attendance stats → Malayalam banter.
+Link: https://drive.google.com/file/d/1NmE4VBw80HXVFzueMAWeRNTG-V1njlB0/view
 
-Project Demo
-Live Site
-https://bunkplanner.vercel.app
-Hosted live on Vercel – calculate and plan your bunks instantly.
+🚀 Project Demo
+🌐 Live Site
+Hosted on Vercel: https://bunkplanner.vercel.app
 
-Video
-(https://drive.google.com/file/d/19yVzMayM9Nruyr4fV3mwzFCqHpfqJvoU/view?usp=sharing)
-Shows a live demo of calculating attendance and planning bunks.
+🎥 Video
+Demo Video: https://drive.google.com/file/d/19yVzMayM9Nruyr4fV3mwzFCqHpfqJvoU/view
 
-Team Contributions
+🤝 Team Contributions
 Muhammed Swafvan: Project idea, coding, UI design, deployment.
 
 Faizan Luthyanvi: Coding, UI enhancements, deployment support.
