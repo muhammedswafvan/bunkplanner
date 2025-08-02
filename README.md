@@ -1,23 +1,85 @@
-# 🎯 BunkPlanner
+🎯 BunkPlanner
+Basic Details
+Team Name: Dev Bros
+Team Members:
 
-BunkPlanner is a simple, responsive web tool for college students to calculate their attendance percentage and safely plan how many hours or days they can bunk without falling below the attendance threshold.
+Team Lead: Muhammed Swafvan – Farook College
 
-## ✨ Features
-- Calculates current attendance %
-- Shows impact of bunking or attending for 1 hour/day
-- Advises how many hours to attend to reach a target %
-- Funny banters in Malayalam for different attendance levels
-- Dark mode toggle
-- Mobile-friendly design
+Member 2: Faizan Luthyanvi – Farook College
 
-## 🚀 Deployment
-This project is deployed on [Vercel](https://vercel.com).
+Project Description
+BunkPlanner is a fun, tongue-in-cheek web app that helps college students calculate their attendance percentage and plan their bunking strategy without falling below the college’s attendance threshold.
 
-## 🛠️ Tech Stack
-- HTML, JavaScript
-- TailwindCSS
-- Vercel Hosting
+The Problem (that doesn't exist)
+Students everywhere are plagued with a non-existent problem:
 
----
+"How many classes can I bunk before I’m forced to pay condonation fees?"
 
-**Plan your bunks wisely – escape condonation!** 😄
+"What if I want to bunk but also stay safe?"
+
+The Solution (that nobody asked for)
+We solved this by creating BunkPlanner, a calculator that:
+
+Shows current attendance
+
+Calculates effect of bunking/attending
+
+Gives sassy Malayalam banters instead of boring AI advice
+
+Lets you escape the imaginary attendance police
+
+Technical Details
+🖥️ For Software:
+Languages: HTML, JavaScript
+
+Frameworks: None
+
+Libraries: Tailwind CSS
+
+Tools: Git, GitHub, Vercel
+
+⚡ For Hardware:
+None (Only needs a brain to bunk)
+
+Implementation
+Installation
+Clone the repo:
+git clone https://github.com/muhammedswafvan/bunkplanner.git
+cd bunkplanner
+Run Locally
+Just open index.html in a browser or use Live Server in VS Code.
+
+Project Documentation
+Screenshots
+(https://drive.google.com/file/d/1ao4YeW1CfFHeK8sXVw1k7dEqGyC7uVaC/view?usp=sharing)
+Home page with input fields and calculate button.
+
+https://drive.google.com/file/d/1XhaY1u9qb-9bL0AIVCkfL_KDf0ZmO4ik/view?usp=sharing
+Result section showing attendance calculations and banters.
+
+(https://drive.google.com/file/d/1lvqgkHDpIn756OXRcYexexZbcDqFf5E-/view?usp=sharing)
+Dark mode enabled view of the BunkPlanner.
+
+Diagrams
+(https://drive.google.com/file/d/1NmE4VBw80HXVFzueMAWeRNTG-V1njlB0/view?usp=sharing)
+Workflow: User inputs → Calculator → Attendance stats → Malayalam banter.
+
+Project Demo
+Live Site
+https://bunkplanner.vercel.app
+Hosted live on Vercel – calculate and plan your bunks instantly.
+
+Video
+(https://drive.google.com/file/d/19yVzMayM9Nruyr4fV3mwzFCqHpfqJvoU/view?usp=sharing)
+Shows a live demo of calculating attendance and planning bunks.
+
+Team Contributions
+Muhammed Swafvan: Project idea, coding, UI design, deployment.
+
+Faizan Luthyanvi: Coding, UI enhancements, deployment support.
+
+Made with ❤️ at TinkerHub Useless Projects
+
+
+
+
