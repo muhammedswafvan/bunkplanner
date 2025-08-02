@@ -42,19 +42,21 @@ We solved this by creating **BunkPlanner**, a calculator that:
 git clone https://github.com/muhammedswafvan/bunkplanner.git
 cd bunkplanner
 Run Locally
-Open index.html in a browser or use Live Server in VS Code.
+Just open index.html in a browser or use Live Server in VS Code.
 
 Project Documentation
 Screenshots
-(https://drive.google.com/file/d/1ao4YeW1CfFHeK8sXVw1k7dEqGyC7uVaC/view?usp=sharing)
+!(https://drive.google.com/file/d/1ao4YeW1CfFHeK8sXVw1k7dEqGyC7uVaC/view?usp=sharing)
 Home page with input fields and calculate button.
-https://drive.google.com/file/d/1XhaY1u9qb-9bL0AIVCkfL_KDf0ZmO4ik/view?usp=sharing
+
+(https://drive.google.com/file/d/1XhaY1u9qb-9bL0AIVCkfL_KDf0ZmO4ik/view?usp=sharing)
 Result section showing attendance calculations and banters.
+
 (https://drive.google.com/file/d/1lvqgkHDpIn756OXRcYexexZbcDqFf5E-/view?usp=sharing)
 Dark mode enabled view of the BunkPlanner.
 
 Diagrams
-https://drive.google.com/file/d/1NmE4VBw80HXVFzueMAWeRNTG-V1njlB0/view?usp=sharing
+(https://drive.google.com/file/d/1NmE4VBw80HXVFzueMAWeRNTG-V1njlB0/view?usp=sharing)
 Workflow: User inputs → Calculator → Attendance stats → Malayalam banter.
 
 Project Demo
@@ -63,7 +65,7 @@ https://bunkplanner.vercel.app
 Hosted live on Vercel – calculate and plan your bunks instantly.
 
 Video
-https://drive.google.com/file/d/19yVzMayM9Nruyr4fV3mwzFCqHpfqJvoU/view?usp=sharing
+(https://drive.google.com/file/d/19yVzMayM9Nruyr4fV3mwzFCqHpfqJvoU/view?usp=sharing)
 Shows a live demo of calculating attendance and planning bunks.
 
 Team Contributions
