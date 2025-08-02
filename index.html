@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BunkPlanner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .result-card { transition: transform 0.2s ease-in-out; }
+    .result-card:hover { transform: scale(1.02); }
+    .dark-mode { background: #1e293b; color: #f1f5f9; }
+    .dark-card { background: #334155 !important; color: #f1f5f9 !important; }
+
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .shake { animation: shake 0.3s ease-in-out; }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+
+    .dark-text { color: #f1f5f9 !important; }
+    .dark-subtext { color: #cbd5e1 !important; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-teal-50 to-teal-100 p-4 sm:p-6 min-h-screen flex items-center justify-center" id="body">
+  <div class="max-w-lg w-full bg-white p-4 sm:p-6 rounded-2xl shadow-xl" id="mainCard">
+    <h1 id="title" class="text-4xl font-extrabold mb-2 text-center text-teal-700">BunkPlanner</h1>
+    <p id="headNote" class="text-center text-gray-700 mb-3 italic font-medium">🎯 Smartly plan your bunks – stay safe, dodge condonation!</p>
+    <p id="description" class="text-center text-gray-600 mb-6 text-sm">Easily calculate your attendance percentage, know how much you can bunk without crossing the threshold, and plan your way to perfect balance between freedom and safety.</p>
+
+    <div class="space-y-3">
+      <input id="markedHours" type="number" placeholder="Total Marked Hours" class="w-full p-3 border rounded-xl shadow-sm text-base">
+      <input id="presentHours" type="number" placeholder="Present Hours" class="w-full p-3 border rounded-xl shadow-sm text-base">
+      <input id="threshold" type="number" placeholder="Attendance Threshold (%)" class="w-full p-3 border rounded-xl shadow-sm text-base">
+      <input id="hoursPerDay" type="number" placeholder="Hours per Day" class="w-full p-3 border rounded-xl shadow-sm text-base">
+      <input id="targetPercent" type="number" placeholder="Target Attendance (%) (Optional)" class="w-full p-3 border rounded-xl shadow-sm text-base">
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        <button onclick="calculate()" class="bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-xl shadow-md">Calculate</button>
+        <button onclick="clearFields()" class="bg-gray-500 hover:bg-gray-600 text-white p-3 rounded-xl shadow-md">Refresh</button>
+        <button onclick="toggleDarkMode()" class="bg-black hover:bg-gray-800 text-white p-3 rounded-xl shadow-md">Dark Mode</button>
+      </div>
+    </div>
+
+    <div id="results" class="mt-6 space-y-3 hidden fade-in">
+      <div class="bg-gray-50 p-4 rounded-xl shadow-md result-card text-sm sm:text-base fade-in" id="resultCard">
+        <p><strong>Current Attendance:</strong> <span id="current"></span>%</p>
+        <p><strong>If Bunk 1 Hour:</strong> <span id="bunkHour"></span>%</p>
+        <p><strong>If Bunk 1 Day:</strong> <span id="bunkDay"></span>%</p>
+        <p><strong>If Attend 1 Hour:</strong> <span id="attendHour"></span>%</p>
+        <p><strong>If Attend 1 Day:</strong> <span id="attendDay"></span>%</p>
+        <p><strong>Safe Bunk Hours Before Threshold:</strong> <span id="safeBunk"></span></p>
+        <p><strong>Hours to Reach Target:</strong> <span id="reachTarget"></span></p>
+      </div>
+      <div class="bg-teal-100 p-3 rounded-xl shadow-inner text-teal-800 text-sm sm:text-base fade-in" id="warningMsg"></div>
+      <div class="bg-green-100 p-3 rounded-xl shadow-inner text-green-800 text-sm sm:text-base fade-in" id="banterMsg"></div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const marked = parseFloat(document.getElementById('markedHours').value);
+      const present = parseFloat(document.getElementById('presentHours').value);
+      const threshold = parseFloat(document.getElementById('threshold').value);
+      const hoursPerDay = parseFloat(document.getElementById('hoursPerDay').value);
+      const target = parseFloat(document.getElementById('targetPercent').value) || null;
+
+      if (isNaN(marked) || isNaN(present) || isNaN(threshold) || isNaN(hoursPerDay)) {
+        alert("Please fill all required fields");
+        return;
+      }
+
+      const currentPercent = Math.round((present / marked * 100));
+      const bunkHour = Math.round((present / (marked + 1) * 100));
+      const bunkDay = Math.round((present / (marked + hoursPerDay) * 100));
+      const attendHour = Math.round(((present + 1) / (marked + 1) * 100));
+      const attendDay = Math.round(((present + hoursPerDay) / (marked + hoursPerDay) * 100));
+
+      let safeBunk = 0;
+      if (currentPercent > threshold) {
+        safeBunk = Math.floor((present * 100 / threshold) - marked);
+      } else {
+        safeBunk = 0;
+      }
+
+      let hoursToReachTarget = 'N/A';
+      if (target && target > currentPercent) {
+        hoursToReachTarget = Math.ceil(((target * marked - 100 * present) / (100 - target)));
+      }
+
+      document.getElementById('current').textContent = currentPercent;
+      document.getElementById('bunkHour').textContent = bunkHour;
+      document.getElementById('bunkDay').textContent = bunkDay;
+      document.getElementById('attendHour').textContent = attendHour;
+      document.getElementById('attendDay').textContent = attendDay;
+      document.getElementById('safeBunk').textContent = safeBunk;
+      document.getElementById('reachTarget').textContent = hoursToReachTarget;
+
+      let warning = "";
+      let banter = "";
+
+      if (currentPercent < 75) {
+        warning = "⚠️ You're below 75%! Attend more classes.";
+        banter = "Classil kerada mone";
+        document.getElementById('warningMsg').classList.add('shake');
+      } else if (currentPercent >= 75 && currentPercent < 80) {
+        warning = "⚠️ Attendance is between 75% and 80%.";
+        banter = "Classonnum missakkalleda mone";
+      } else if (currentPercent >= 80 && currentPercent <= 90) {
+        warning = "✅ You're safe, but be cautious.";
+        banter = "Nee safe aan ennalum onn sookshicho";
+      } else if (currentPercent > 90) {
+        warning = "🔥 High attendance!";
+        banter = "Nee kollalloda mone dharyamayitt class cut cheytho";
+      }
+
+      document.getElementById('warningMsg').textContent = warning;
+      document.getElementById('banterMsg').textContent = banter;
+      document.getElementById('results').classList.remove('hidden');
+    }
+
+    function clearFields() {
+      document.getElementById('markedHours').value = '';
+      document.getElementById('presentHours').value = '';
+      document.getElementById('threshold').value = '';
+      document.getElementById('hoursPerDay').value = '';
+      document.getElementById('targetPercent').value = '';
+      document.getElementById('results').classList.add('hidden');
+    }
+
+    function toggleDarkMode() {
+      const body = document.getElementById('body');
+      const card = document.getElementById('mainCard');
+      const resultCard = document.getElementById('resultCard');
+
+      body.classList.toggle('dark-mode');
+      card.classList.toggle('dark-card');
+      resultCard.classList.toggle('dark-card');
+
+      document.getElementById('title').classList.toggle('dark-text');
+      document.getElementById('headNote').classList.toggle('dark-subtext');
+      document.getElementById('description').classList.toggle('dark-subtext');
+    }
+  </script>
+</body>
+</html>
