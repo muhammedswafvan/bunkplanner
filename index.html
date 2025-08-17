@@ -54,6 +54,7 @@
         <p><strong>If Bunk 1 Day:</strong> <span id="bunkDay"></span>%</p>
         <p><strong>If Attend 1 Hour:</strong> <span id="attendHour"></span>%</p>
         <p><strong>If Attend 1 Day:</strong> <span id="attendDay"></span>%</p>
+        <p><strong>Hours to Increase by +1%:</strong> <span id="reachPlusOne"></span></p>
         <p><strong>Safe Bunk Hours Before Threshold:</strong> <span id="safeBunk"></span></p>
         <p><strong>Hours to Reach Target:</strong> <span id="reachTarget"></span></p>
       </div>
@@ -63,7 +64,7 @@
     <a href="about.html" class="hover:text-teal-600">About Us</a> | <a href="privacy-policy.html" class="hover:text-teal-600">Privacy Policy</a>
   </div>
 
-  <script>
+ <script> 
     function calculate() {
       const marked = parseFloat(document.getElementById('markedHours').value);
       const present = parseFloat(document.getElementById('presentHours').value);
@@ -94,11 +95,20 @@
         hoursToReachTarget = Math.ceil(((target * marked - 100 * present) / (100 - target)));
       }
 
+      // 🔹 New: Hours to increase attendance by +1%
+      let hoursToPlusOne = 'N/A';
+      let nextPercent = currentPercent + 1;
+      if (nextPercent <= 100) {
+        hoursToPlusOne = Math.ceil(((nextPercent * marked - 100 * present) / (100 - nextPercent)));
+      }
+
+      // Update results on page
       document.getElementById('current').textContent = currentPercent;
       document.getElementById('bunkHour').textContent = bunkHour;
       document.getElementById('bunkDay').textContent = bunkDay;
       document.getElementById('attendHour').textContent = attendHour;
       document.getElementById('attendDay').textContent = attendDay;
+      document.getElementById('reachPlusOne').textContent = hoursToPlusOne;
       document.getElementById('safeBunk').textContent = safeBunk;
       document.getElementById('reachTarget').textContent = hoursToReachTarget;
 
@@ -147,8 +157,8 @@
       document.getElementById('headNote').classList.toggle('dark-subtext');
       document.getElementById('description').classList.toggle('dark-subtext');
     }
-  </script>
-  
+</script>
+ 
  
 </body>
 </html>
